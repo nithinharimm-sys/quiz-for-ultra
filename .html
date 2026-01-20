@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> M.NITHIN | Portfolio</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #eb0781;
+            --accent: #00d2ff;
+            --bg-dark: #0b0d17;
+            --card-bg: rgba(255, 255, 255, 0.05);
+            --text: #cfc0c0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg-dark); color: var(--text); overflow-x: hidden; line-height: 1.6; }
+
+        /* --- CINEMATIC HERO --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-parallax {
+            position: absolute;
+            top: -10%; left: 0; width: 100%; height: 120%;
+            background: linear-gradient(rgba(11, 13, 23, 0.6), var(--bg-dark)),
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80');
+            background-size: cover; background-position: center;
+            z-index: -1;
+            will-change: transform;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 10vw, 6rem);
+            letter-spacing: clamp(5px, 2vw, 15px);
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* --- LAYOUT --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 80px 5%; }
+        h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary); display: flex; align-items: center; gap: 15px; }
+        h2::after { content: ""; height: 2px; flex-grow: 1; background: linear-gradient(to right, var(--primary), transparent); }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s ease;
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(108, 92, 231, 0.1); }
+
+        .badge { display: inline-block; padding: 4px 12px; background: var(--primary); border-radius: 50px; font-size: 0.75rem; margin-bottom: 10px; }
+        
+        .contact-info i { color: var(--primary); width: 25px; }
+        .lang-tag { display: inline-block; background: rgba(255,255,255,0.1); padding: 2px 10px; border-radius: 4px; margin: 2px; font-size: 0.85rem; }
+
+        .btn { display: inline-block; padding: 10px 25px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; margin-top: 15px; transition: 0.3s; }
+        .btn:hover { box-shadow: 0 0 20px var(--primary); }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-parallax" id="parallaxBg"></div>
+        <div class="hero-content" data-aos="zoom-out">
+            <h1 data-aos="fade-down">M.Nithin</h1>
+            <p data-aos="fade-up">ECE Student | Front-end Developer | UI/UX Designer</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <h2 data-aos="fade-right">About Me</h2>
+        <div class="card" data-aos="fade-up">
+            <p>Grew up academically as an <strong>ECE student</strong>, but my curiosity naturally pulled me toward web development. I enjoy creating clean, simple, and user-friendly web experiences. Design and strategy interest me as much as the code itself. I'm currently learning front-end development and UI/UX step by step. Along the way, I'm also eager to explore and understand AI.</p>
+        </div>
+
+        <h2 data-aos="fade-right" style="margin-top: 60px;">Education</h2>
+        <div class="grid">
+            <div class="card" data-aos="fade-up">
+                <span class="badge">Current</span>
+                <h3>Kingston Engineering College</h3>
+                <p>2nd Year ECE | Vellore, Tamil Nadu</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <span class="badge">PUC</span>
+                <h3>Surabhi PU College</h3>
+                <p>1st & 2nd PUC | Hospet, Karnataka</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <span class="badge">Schooling</span>
+                <h3>St. Joseph's High School</h3>
+                <p>CBSE | TB Dam, Hospet</p>
+            </div>
+        </div>
+
+        <h2 data-aos="fade-right" style="margin-top: 60px;">Skills & Tools</h2>
+        <div class="grid">
+            <div class="card" data-aos="zoom-in">
+                <i class="fas fa-code fa-2x" style="color:var(--primary)"></i>
+                <h3 style="margin-top:15px">Development</h3>
+                <p>Front-end Development, Generative AI, Figma</p>
+            </div>
+            <div class="card" data-aos="zoom-in" data-aos-delay="100">
+                <i class="fas fa-microchip fa-2x" style="color:var(--primary)"></i>
+                <h3 style="margin-top:15px">Hardware</h3>
+                <p>Embedded Systems, Arduino, ESP32</p>
+            </div>
+        </div>
+
+        <h2 data-aos="fade-right" style="margin-top: 60px;">Certifications</h2>
+        <div class="grid">
+            <div class="card" data-aos="flip-up">
+                <h4>HP Life Foundation</h4>
+                <p>AI for Business Professionals, Professional Networking for Career Growth</p>
+            </div>
+            <div class="card" data-aos="flip-up" data-aos-delay="100">
+                <h4>Infosys Springboard</h4>
+                <p>Basics of Python, AI, IoT Edge Computing</p>
+            </div>
+            <div class="card" data-aos="flip-up" data-aos-delay="200">
+                <h4>Workshops</h4>
+                <p>Power BI (Office Master), AI Tools (Be10x)</p>
+            </div>
+        </div>
+
+        <h2 data-aos="fade-right" style="margin-top: 60px;">Projects</h2>
+        <div class="grid">
+            <div class="card" data-aos="fade-up">
+                <h3>Controlled Environment Plant Cultivation</h3>
+                <p>Automated agricultural system utilizing ECE principles.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="100">
+                <h3>7 Segment Rolling Display</h3>
+                <p>Hardware-based display project using microcontrollers.</p>
+            </div>
+            <div class="card" data-aos="fade-up" data-aos-delay="200">
+                <h3>Mini Quiz Game</h3>
+                <p>Interactive web-based quiz application.</p>
+                <a href="https://nithinharimm-sys.github.io/quiz-for-ultra/" class="btn" target="_blank">Play Game</a>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <h2 style="justify-content: center;">Contacts</h2>
+            <div class="grid contact-info" style="text-align: left;">
+                <div class="card" data-aos="fade-right">
+                    <p><i class="fas fa-envelope"></i> nithinhari.mm@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> 8056116227</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Hospet, Vijayanagara District, Karnataka</p>
+                </div>
+                <div class="card" data-aos="fade-left">
+                    <h4>Languages</h4>
+                    <div style="margin-top:10px">
+                        <span class="lang-tag">Tamil</span>
+                        <span class="lang-tag">Kannada</span>
+                        <span class="lang-tag">English</span>
+                        <span class="lang-tag">Hindi</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: false });
+        
+        window.addEventListener('scroll', () => {
+            const scrollValue = window.scrollY;
+            const bg = document.getElementById('parallaxBg');
+            bg.style.transform = `translate3d(0, ${scrollValue * 0.4}px, 0)`;
+        });
+    </script>
+</body>
+</html>
